@@ -7,7 +7,10 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['https://gilded-quokka-683a56.netlify.app', 'http://localhost:5173'],
+  credentials: true
+}))
 app.use(express.json());
 
 const uri = process.env.MONGODB_URI;
