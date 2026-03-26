@@ -92,6 +92,7 @@ async function run() {
     // POST create a new job
     app.post("/jobs", async (req, res) => {
       try {
+        console.log("Incoming job:", req.body)
         const newJob = {
           ...req.body,
           postedAt: new Date(),
